@@ -4,8 +4,8 @@
 // @version      0.1
 // @description  try to take over the world!
 // @author       You
-// @match           https://facebook.com/*
-// @match           https://*.facebook.com/*
+// @match        https://facebook.com/*
+// @match        https://*.facebook.com/*
 // @icon         https://www.facebook.com/favicon.ico
 // @grant        none
 // ==/UserScript==
