@@ -27,9 +27,8 @@
 ::-webkit-scrollbar{display:none!important}
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 body{background:#000!important;font:12px/1.4 spotify-circular,sans-serif;color:#fff!important}
-input[type=date], input[type=email], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=url], select, textareabody,body.sc-classic,.headerMenu,.sc-font, .sc-font-light,.sc-button,.sc-type-medium, .sc-type-small,.sc-classic .header,.sc-classic .notificationBadge,.sc-type-h1, .sc-type-h2, .sc-type-h3, .sc-type-h4, .sc-type-h5, .sc-type-h6, h1, h2, h3, h4, h5, h6{font-family:CircularSpTitle,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif)!important}
-.sc-type-h1,.sc-type-h2,h1,h2{
-    font-family:CircularSpTitle,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif)!important;font-size:24px!important}
+input[type=date], input[type=email], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=url], select, textareabody,body.sc-classic,.headerMenu,.sc-font, .sc-font-light,.sc-button,.sc-type-medium, .sc-type-small,.sc-classic .header,.sc-classic .notificationBadge,.sc-type-h1, .sc-type-h2, .sc-type-h3, .sc-type-h4, .sc-type-h5, .sc-type-h6, h1, h2, h3, h4, h5, h6,.sc-ministats,.sc-type-h1,.sc-type-h2,h1,h2{font-family:CircularSpTitle,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif)!important}
+.sc-type-h1,.sc-type-h2,h1,h2{font-size:24px!important}
 .infoStats__description a,
 .infoStats__description a:visited{color:#1ed760!important}
 .truncatedAudioInfo__content a,.truncatedAudioInfo__content a:hover{color:#121212 !important}
@@ -383,7 +382,8 @@ li.g-tabs-item:first-child{margin-left:0!important}
 .g-type-shrinkwrap-large-primary{margin:0!important;padding:0!important}
 .collection__section .audibleTilePlaceholder:before{border:0!important}
 .collection.m-overview .collection__section{border:0!important}
-.sc-classic .sidebarHeader__title{font-size:18px!important;font-weight:700}
+.sc-classic .sidebarHeader__title{font-feature-settings:normal!important;
+    font-variant-numeric:normal!important;font-size:18px!important;font-weight:700}
 .profileHeaderInfo__userName{text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;overflow:hidden;-webkit-box-orient:vertical;line-height:inherit!important;-webkit-user-select:none;-ms-user-select:none;user-select:none}
 .profileHeaderInfo__content.sc-media-content{padding-top:168px!important}
 .profileHeader{margin:0 -20px!important;padding:26px!important;height:400px!important}
