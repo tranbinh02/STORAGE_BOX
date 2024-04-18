@@ -43,7 +43,7 @@ a.g-link-user{color:#fff!important;font-weight:500!important}
 .g-tabs,.listenEngagement,.m-light .headerMenu__list,.sc-border-light,.sc-border-light-right,.sc-classic .dropdownContent__header{border:0!important;box-shadow:none!important}
 .sc-type-h1, .sc-type-h2, .sc-type-h3, .sc-type-h4, .sc-type-h5, .sc-type-h6, h1, h2, h3, h4, h5, h6,.sc-text,.sc-classic .g-type-shrinkwrap-large-secondary, .sc-classic .g-type-shrinkwrap-large-secondary:visited, .sc-classic .g-type-shrinkwrap-secondary, .sc-classic .g-type-shrinkwrap-secondary:visited{color:#fff!important}
 .l-container.l-content .mixedSelectionModule,.l-container.l-content .sc-border-light-bottom,.l-container.l-content .sc-border-light-top{border-bottom:0!important}
-.truncatedAudioInfo.m-overflow.m-collapsed .truncatedAudioInfo__wrapper:after,.truncatedUserDescription.m-overflow.m-collapsed .truncatedUserDescription__wrapper:after,.sound__soundActions,.sc-classic .compactTrackList__moreLink:focus, .sc-classic .compactTrackList__moreLink:hover,.sc-classic .compactTrackListItem.clickToPlay.active .compactTrackListItem__additional, .sc-classic .compactTrackListItem.clickToPlay:focus .compactTrackListItem__additional, .sc-classic .compactTrackListItem.clickToPlay:hover .compactTrackListItem__additional,.sc-classic .readMoreTile__countWrapper,.sc-classic .createPlaylistSuggestion__addContainer,.sc-classic .searchTitle{background:transparent!important}
+.truncatedAudioInfo.m-overflow.m-collapsed .truncatedAudioInfo__wrapper:after,.truncatedUserDescription.m-overflow.m-collapsed .truncatedUserDescription__wrapper:after,.sound__soundActions,.sc-classic .compactTrackList__moreLink:focus, .sc-classic .compactTrackList__moreLink:hover,.sc-classic .compactTrackListItem.clickToPlay.active .compactTrackListItem__additional, .sc-classic .compactTrackListItem.clickToPlay:focus .compactTrackListItem__additional, .sc-classic .compactTrackListItem.clickToPlay:hover .compactTrackListItem__additional,.sc-classic .readMoreTile__countWrapper,.sc-classic .createPlaylistSuggestion__addContainer,.sc-classic .searchTitle,.sc-classic .quotaMeterWrapper{background:transparent!important}
 .commentItem__replyButton, .commentItem__replyButton:hover, .commentItem__replyButton:visited,.commentItem__creatorLink, .commentItem__creatorLink:hover, .commentItem__creatorLink:visited, .commentItem__username, .commentItem__usernameLink, .commentItem__usernameLink:hover, .commentItem__usernameLink:visited,a.sc-link-dark, a:hover{color:#fff!important}
 .sc-classic .compactTrackListItem.active, .sc-classic .compactTrackListItem.active .compactTrackListItem__content, .sc-classic .compactTrackListItem.active .compactTrackListItem__number, .sc-classic .compactTrackListItem.active .compactTrackListItem__plays, .sc-classic .compactTrackListItem.active .compactTrackListItem__trackTitle, .sc-classic .compactTrackListItem.active .compactTrackListItem__user{color:#ff3040!important}
 button, input, select, textarea{color:#a7a7a7!important}
@@ -404,6 +404,9 @@ li.g-tabs-item:first-child{margin-left:0!important}
 .truncatedUserDescription.m-overflow .truncatedUserDescription__collapse{display:none!important}
 .truncatedUserDescription__wrapper{max-height:-webkit-fill-available!important}
 .profileHeaderInfo__userName{text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;overflow:hidden;-webkit-box-orient:vertical;line-height:inherit!important;-webkit-user-select:none;-ms-user-select:none;user-select:none}
+.sc-classic .insightsSidebarModule__title{color:#a7a7a7!important}
+.sc-classic .quotaMeter__minutesUsed{background:#1ed760!important}
+.quotaMeter__upsellText a{color:#a7a7a7!important}
 .profileHeaderInfo__content.sc-media-content{padding-top:168px!important}
 .profileHeader{margin:0 -20px!important;padding:26px!important;height:400px!important}
 .profileHeaderInfo br{display:none!important}
@@ -421,24 +424,6 @@ li.g-tabs-item:first-child{margin-left:0!important}
     0% {background-position: 0%}
     100% {background-position: 100%}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*----Responsive Design----*/
 @media (max-width:1200px) {
