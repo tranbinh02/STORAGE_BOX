@@ -403,7 +403,12 @@ li.g-tabs-item:first-child{margin-left:0!important}
 .infoStats__value{font-size:38px!important}
 .webiRedirectionHeader{background:#eb5561 !important}
 .webiRedirectionHeader__new{background:#ff3040!important}
-
+#onetrust-consent-sdk #onetrust-banner-sdk{background:#000!important}
+#onetrust-consent-sdk #onetrust-banner-sdk #onetrust-policy-text, #onetrust-consent-sdk #onetrust-banner-sdk .ot-dpd-desc, #onetrust-consent-sdk #onetrust-banner-sdk .ot-b-addl-desc{color:#e7e7e7!important}
+#onetrust-consent-sdk #onetrust-banner-sdk #onetrust-policy-text, #onetrust-consent-sdk #onetrust-banner-sdk .ot-dpd-desc, #onetrust-consent-sdk #onetrust-banner-sdk .ot-b-addl-desc{font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva,var(--fallback-fonts, sans-serif)!important}
+#onetrust-consent-sdk #onetrust-banner-sdk #onetrust-accept-btn-handler, #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-reject-all-handler{font-family:CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif) !important}
+#onetrust-consent-sdk #onetrust-banner-sdk #onetrust-accept-btn-handler, #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-pc-btn-handler, #onetrust-consent-sdk #onetrust-banner-sdk #onetrust-reject-all-handler{color:#e7e7e7!important;margin-bottom:10px!important}
+#onetrust-consent-sdk #onetrust-banner-sdk #onetrust-pc-btn-handler{color:#000!important;font-weight:800!important}
 .truncatedUserDescription.m-overflow .truncatedUserDescription__collapse{display:none!important}
 .truncatedUserDescription__wrapper{max-height:-webkit-fill-available!important}
 .profileHeaderInfo__userName{text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;overflow:hidden;-webkit-box-orient:vertical;line-height:inherit!important;-webkit-user-select:none;-ms-user-select:none;user-select:none}
