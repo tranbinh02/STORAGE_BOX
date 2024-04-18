@@ -26,7 +26,7 @@
 @font-face{font-family:CircularSp-Hebr;font-weight:400;font-display:swap;unicode-range:u+0000,u+000d,u+0020,u+0030-0039,u+00a0,u+00a4,u+00b6-00b7,u+01c4-01c6,u+01f1-01f3,u+02bb-02bc,u+05b0-05c4,u+05d0-05ea,u+05f0-05f4,u+200e-200f,u+20aa,u+fb2a-fb36,u+fb38-fb3c,u+fb3e,u+fb40-fb41,u+fb43-fb44,u+fb46-fb4f,u+ffff;src:url(https://encore.scdn.co/fonts/CircularSp-Hebr-Book-414f88babad55bb44c9552d9b92504f7.woff2) format("woff2"),url(https://encore.scdn.co/fonts/CircularSp-Hebr-Book-d8209975eafc81a9499df8401a339ddd.woff) format("woff")}
 ::-webkit-scrollbar{display:none!important}
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;    text-decoration:none!important}
-body{background:#000!important;font:12px/1.4 CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif);color:#fff!important}
+body,.icb1b90{background:#000!important;font:12px/1.4 CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif);color:#fff!important}
 input[type=date], input[type=email],input[type=password], input[type=search],input[type=tel],input[type=text],input[type=url],select, textareabody,body.sc-classic,
 .headerMenu,, .sc-type-h2,.sc-font, .sc-font-light,.sc-button,.sc-type-medium, .sc-type-small,.sc-classic .header,.sc-classic .notificationBadge,.sc-ministats,.profileHeaderInfo__userName:before,.sc-classic .g-tabs,.sc-type-h3,h3{font-family:CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif)!important}
 .soundTitle__titleHeroContainer h1.soundTitle__title.sc-font.g-type-shrinkwrap-inline.g-type-shrinkwrap-large-primary.theme-dark, .fullHero__titleTextLineBig .fullHero__titleTextTitle,.sc-type-h1, .sc-type-h4, .sc-type-h5, .sc-type-h6, h1, h2, h4, h5, h6,.userstream__header,.infoStats__value,.sidebarModule{font-family:CircularSpTitle,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif)!important}
@@ -40,10 +40,10 @@ a.g-link-user{color:#fff!important;font-weight:500!important}
 .l-container{width:100%}
 .sc-border-light-right,.mixedSelectionModule,.sc-border-light-bottom,.sc-border-light-top,.l-listen-wrapper .l-about-rows,.sc-classic .queue__panel,.sc-classic .queueFallback__stationMode,.sc-classic .dropdownContent__listItem,.sc-classic .dropdownContent__main,.sc-classic .audibleTilePlaceholder:before,.sc-classic .collection.m-overview .collection__section:not(:last-child),.sc-classic .inbox__item:before,.sc-classic .activitiesListFull__item+.activitiesListFull__item,.sc-classic .audibleTilePlaceholder:before,.sc-classic .collection.m-overview .collection__section:not(:last-child),.sc-classic .g-form-section-head,.sc-classic .searchTitle__text{border-color:rgba(255, 255, 255, 0.1)!important}
 .sc-classic .inbox__item:before{background-color:rgba(255, 255, 255, 0.1)!important}
-.g-tabs,.listenEngagement,.m-light .headerMenu__list,.sc-border-light,.sc-border-light-right,.sc-classic .dropdownContent__header{border:0!important;box-shadow:none!important}
+.g-tabs,.listenEngagement,.m-light .headerMenu__list,.sc-border-light,.sc-border-light-right,.sc-classic .dropdownContent__header,.sc-classic .uploadMain__foot{border:0!important;box-shadow:none!important}
 .sc-type-h1, .sc-type-h2, .sc-type-h3, .sc-type-h4, .sc-type-h5, .sc-type-h6, h1, h2, h3, h4, h5, h6,.sc-text,.sc-classic .g-type-shrinkwrap-large-secondary, .sc-classic .g-type-shrinkwrap-large-secondary:visited, .sc-classic .g-type-shrinkwrap-secondary, .sc-classic .g-type-shrinkwrap-secondary:visited{color:#fff!important}
 .l-container.l-content .mixedSelectionModule,.l-container.l-content .sc-border-light-bottom,.l-container.l-content .sc-border-light-top{border-bottom:0!important}
-.truncatedAudioInfo.m-overflow.m-collapsed .truncatedAudioInfo__wrapper:after,.truncatedUserDescription.m-overflow.m-collapsed .truncatedUserDescription__wrapper:after,.sound__soundActions,.sc-classic .compactTrackList__moreLink:focus, .sc-classic .compactTrackList__moreLink:hover,.sc-classic .compactTrackListItem.clickToPlay.active .compactTrackListItem__additional, .sc-classic .compactTrackListItem.clickToPlay:focus .compactTrackListItem__additional, .sc-classic .compactTrackListItem.clickToPlay:hover .compactTrackListItem__additional,.sc-classic .readMoreTile__countWrapper,.sc-classic .createPlaylistSuggestion__addContainer,.sc-classic .searchTitle,.sc-classic .quotaMeterWrapper{background:transparent!important}
+.truncatedAudioInfo.m-overflow.m-collapsed .truncatedAudioInfo__wrapper:after,.truncatedUserDescription.m-overflow.m-collapsed .truncatedUserDescription__wrapper:after,.sound__soundActions,.sc-classic .compactTrackList__moreLink:focus, .sc-classic .compactTrackList__moreLink:hover,.sc-classic .compactTrackListItem.clickToPlay.active .compactTrackListItem__additional, .sc-classic .compactTrackListItem.clickToPlay:focus .compactTrackListItem__additional, .sc-classic .compactTrackListItem.clickToPlay:hover .compactTrackListItem__additional,.sc-classic .readMoreTile__countWrapper,.sc-classic .createPlaylistSuggestion__addContainer,.sc-classic .searchTitle,.sc-classic .quotaMeterWrapper,.sc-classic .uploadMain__chooserContainer,.sc-classic .uploadMain__foot{background:transparent!important}
 .commentItem__replyButton, .commentItem__replyButton:hover, .commentItem__replyButton:visited,.commentItem__creatorLink, .commentItem__creatorLink:hover, .commentItem__creatorLink:visited, .commentItem__username, .commentItem__usernameLink, .commentItem__usernameLink:hover, .commentItem__usernameLink:visited,a.sc-link-dark, a:hover{color:#fff!important}
 .sc-classic .compactTrackListItem.active, .sc-classic .compactTrackListItem.active .compactTrackListItem__content, .sc-classic .compactTrackListItem.active .compactTrackListItem__number, .sc-classic .compactTrackListItem.active .compactTrackListItem__plays, .sc-classic .compactTrackListItem.active .compactTrackListItem__trackTitle, .sc-classic .compactTrackListItem.active .compactTrackListItem__user{color:#ff3040!important}
 button, input, select, textarea{color:#a7a7a7!important}
@@ -401,12 +401,27 @@ li.g-tabs-item:first-child{margin-left:0!important}
 .repeatControl.sc-ir.m-one:before,.repeatControl.sc-ir.m-all:after,.sc-classic .shuffleControl.m-shuffling:before{content:'';background:#1db954!important;border-radius:50%!important;position:absolute;width:4px!important;height:4px!important;opacity:inherit!important;top:48px;left:6px}
 .sound__header{padding-top:0!important}
 .infoStats__value{font-size:38px!important}
+.webiRedirectionHeader{background:#eb5561 !important}
+.webiRedirectionHeader__new{background:#ff3040!important}
+
 .truncatedUserDescription.m-overflow .truncatedUserDescription__collapse{display:none!important}
 .truncatedUserDescription__wrapper{max-height:-webkit-fill-available!important}
 .profileHeaderInfo__userName{text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;overflow:hidden;-webkit-box-orient:vertical;line-height:inherit!important;-webkit-user-select:none;-ms-user-select:none;user-select:none}
 .sc-classic .insightsSidebarModule__title{color:#a7a7a7!important}
 .sc-classic .quotaMeter__minutesUsed{background:#1ed760!important}
 .quotaMeter__upsellText a{color:#a7a7a7!important}
+.l652k20{background:#ff3040!important}
+._1nr3cdw7,.SideNav_Container__fqcOH.SideNav_SidebarNavigation__TDwwc{background:#1b1b1b!important}
+.Button_Ghost__Iv82l{background:transparent!important}
+._11yjo623{background:rgb(255 255 255 / 6%)!important}
+.SideNavLogo_Logo__zVYzc svg path,.SideNavLogo_Collapsed__6MhT3 svg path,.MuiButton-root svg path,.MuiButtonBase-root svg path{fill:#fff!important}
+._11yjo622 ._11yjo625 td,._11yjo622 ._11yjo626 td{background:rgb(255 255 255 / 10%)!important}
+.mui-28466c{border-color:#fff!important}
+.l652k2n{background:#000!important;border-color:rgb(255 255 255 / 23%) !important}
+.mui-n430uj{color:#fff!important}
+.mui-15yj62u:hover{background:#111!important}
+.mui-ijebwn{background:#111!important;border-color:rgb(255 255 255 / 9%)!important;color:#fff!important}
+button.BaseButton_BaseButton__QOcYl{background:rgb(255 255 255 / 10%)!important}
 .profileHeaderInfo__content.sc-media-content{padding-top:168px!important}
 .profileHeader{margin:0 -20px!important;padding:26px!important;height:400px!important}
 .profileHeaderInfo br{display:none!important}
