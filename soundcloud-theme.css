@@ -201,7 +201,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 .soundTitle__usernameTitleContainer .soundTitle__usernameHeroContainer h2{font-size:22px!important;font-weight:600!important}
 .commentItem__like button.commentItem__likeButton.m-selected svg path{fill:#ff3040!important}
 .sc-button-dropdown:after{border-color:#727272!important}
-.sc-classic .l-fixed-top-one-column>.l-top{background:#121212!important;top:0!important}
+.sc-classic .l-fixed-top-one-column>.l-top{background:#121212!important;top:0!important;padding:50px 50px 20px 20px!important}
 .sc-classic .mixedSelectionModule__titleText, .sc-classic .velvetCakeModule__titleText{font-size:24px!important;font-weight:700!important}
 .stream__header,.sound__waveform{display:none!important}
 .mixedSelectionModule__title.sc-ml-2x.sc-pt-3x:first-child{margin-top:20px!important}
