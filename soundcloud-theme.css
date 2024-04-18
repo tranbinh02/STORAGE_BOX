@@ -197,6 +197,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 .fullHero__foreground .playButton.m-stretch{transition:inherit!important}
 .listenArtworkWrapper .editImage.alwaysShowEditButton.customImage,.listenArtworkWrapper .sc-artwork>span{width:232px!important;height:232px!important}
 .image__lightOutline .image__full{box-shadow:none!important;border-radius:4px!important}
+.userBadge__avatar .image__full{border-radius:50%!important}
 .sc-classic .fullHero{height:340px!important}
 .soundTitle__usernameTitleContainer .soundTitle__usernameHeroContainer h2{font-size:22px!important;font-weight:600!important}
 .commentItem__like button.commentItem__likeButton.m-selected svg path{fill:#ff3040!important}
