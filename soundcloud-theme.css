@@ -344,7 +344,7 @@ li.g-tabs-item:first-child{margin-left:0!important}
 .sc-input{background:#242424!important;border:1px solid rgb(255 255 255 / 9%)!important}
 .badgeList__item{width:11.666%!important}
 .playButton.m-stretch{transition:1s}
-.playButton.m-stretch:hover{transform:scale(1.0.5)}
+.playButton.m-stretch:hover{transform:scale(1.05)}
 .l-listen-wrapper .l-about-rows{border-color:rgb(255 255 255 / 5%) !important}
 .fullHero__artwork{width:232px!important;height:232px!important;-webkit-box-shadow: 0 4px 60px rgba(0,0,0,.5)!important;box-shadow: 0 4px 60px rgba(0,0,0,.5)!important;top:83px!important;left:24px!important}
 .fullHero__foreground .soundTitle__playButton,.fullHero__foreground .fullHero__titleButton{position:absolute;margin:176px 0 0 5px!important;margin-right:0!important}
