@@ -51,11 +51,11 @@ button, input, select, textarea{color:#a7a7a7!important}
 .sc-classic .soundBadge.active:not(.compact), .sc-classic .soundBadge.hover:not(.compact), .sc-classic .soundBadge.selected:not(.compact), .sc-classic .soundBadge:hover:not(.compact){background-color:transparent!important}
 .commentItem__body{color:#a7a7a7!important}
 .m-light .headerMenu__link:focus, .m-light .headerMenu__link:hover,.sc-classic .compactTrackListItem.clickToPlay.active, .sc-classic .compactTrackListItem.clickToPlay:focus, .sc-classic .compactTrackListItem.clickToPlay:hover{background:transparent!important}
-.header__soundInput,.header__proUpsell_side_by_side_experience,.header__forArtistsButton,.header__navMenu.sc-clearfix.sc-list-nostyle.left{display:none!important}
+.header__soundInput,.header__proUpsell_side_by_side_experience,.header__forArtistsButton{display:none!important}
 .headerMenu__link{padding:12px 8px 12px 12px!important}
 .m-light .headerMenu__link, .m-light .headerMenu__link:focus, .m-light .headerMenu__link:hover{color:#eaeaea!important}
 .headerMenu{font-weight:300!important}
-.headerMenu.m-light{background:#282828!important;border:0!important;border-radius:4px!important;box-shadow:3px 5px 8px 0px rgb(0 0 0 / 50%)!important}
+.headerMenu.m-light{background:#282828!important;border:0!important;border-radius:4px!important;box-shadow:3px 5px 10px 0px rgba(0, 0, 0, 0.2)!important}
 .header__inner{width:100%!important}
 .playControls__bg{top:0!important}
 .playControls{z-index:9;border-radius:4px;margin:8px!important;width:-webkit-fill-available!important;margin-left:0!important}
@@ -121,12 +121,13 @@ div.sc-artwork{background-image:inherit!important}
 .sc-classic .volume__button,.sc-classic .volume.muted .volume__button{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-encore-id='icon' fill='%23b3b3b3' role='presentation' aria-label='Đang tắt tiếng' aria-hidden='true' id='volume-icon' viewBox='0 0 16 16' class='Svg-sc-ytk21e-0 kcUFwU'%3E%3Cpath d='M13.86 5.47a.75.75 0 0 0-1.061 0l-1.47 1.47-1.47-1.47A.75.75 0 0 0 8.8 6.53L10.269 8l-1.47 1.47a.75.75 0 1 0 1.06 1.06l1.47-1.47 1.47 1.47a.75.75 0 0 0 1.06-1.06L12.39 8l1.47-1.47a.75.75 0 0 0 0-1.06z'%3E%3C/path%3E%3Cpath d='M10.116 1.5A.75.75 0 0 0 8.991.85l-6.925 4a3.642 3.642 0 0 0-1.33 4.967 3.639 3.639 0 0 0 1.33 1.332l6.925 4a.75.75 0 0 0 1.125-.649v-1.906a4.73 4.73 0 0 1-1.5-.694v1.3L2.817 9.852a2.141 2.141 0 0 1-.781-2.92c.187-.324.456-.594.78-.782l5.8-3.35v1.3c.45-.313.956-.55 1.5-.694V1.5z'%3E%3C/path%3E%3C/svg%3E")!important}
 .sc-classic .volume[data-level="1"] .volume__button, .sc-classic .volume[data-level="2"] .volume__button, .sc-classic .volume[data-level="3"] .volume__button, .sc-classic .volume[data-level="4"] .volume__button, .sc-classic .volume[data-level="5"] .volume__button{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23b3b3b3' data-encore-id='icon' role='presentation' aria-label='Âm lượng trung bình' aria-hidden='true' id='volume-icon' viewBox='0 0 16 16' class='Svg-sc-ytk21e-0 kcUFwU'%3E%3Cpath d='M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4a3.642 3.642 0 0 1-1.33-4.967 3.639 3.639 0 0 1 1.33-1.332l6.925-4a.75.75 0 0 1 .75 0zm-6.924 5.3a2.139 2.139 0 0 0 0 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 6.087a4.502 4.502 0 0 0 0-8.474v1.65a2.999 2.999 0 0 1 0 5.175v1.649z'%3E%3C/path%3E%3C/svg%3E")!important}
 .sc-classic .volume[data-level="6"] .volume__button, .sc-classic .volume[data-level="7"] .volume__button, .sc-classic .volume[data-level="8"] .volume__button, .sc-classic .volume[data-level="9"] .volume__button, .sc-classic .volume[data-level="10"] .volume__button{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-encore-id='icon' fill='%23b3b3b3' role='presentation' aria-label='Âm lượng cao' aria-hidden='true' id='volume-icon' viewBox='0 0 16 16' class='Svg-sc-ytk21e-0 kcUFwU'%3E%3Cpath d='M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4a3.642 3.642 0 0 1-1.33-4.967 3.639 3.639 0 0 1 1.33-1.332l6.925-4a.75.75 0 0 1 .75 0zm-6.924 5.3a2.139 2.139 0 0 0 0 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 4.29V5.56a2.75 2.75 0 0 1 0 4.88z'%3E%3C/path%3E%3Cpath d='M11.5 13.614a5.752 5.752 0 0 0 0-11.228v1.55a4.252 4.252 0 0 1 0 8.127v1.55z'%3E%3C/path%3E%3C/svg%3E")!important}
+.header__navMenu.sc-clearfix{position:absolute!important;top:15px!important;left:-29px!important}
 .volume__button{width:17px!important;height:79px!important}
 .playControls__wrapper.l-container.l-fullwidth{width:100%!important}
 .header__navMenu>li{width:100%!important}
 .sc-classic .header>li>a:focus,
 .sc-classic .header__navMenu>li>a.selected{color:#fff!important;background:transparent!important}
-.header__left,.header__navMenu,.header__navWrapper{width:100%!important}
+.header__left,.header__navWrapper{width:100%!important}
 .header__left{padding:16px 24px !important}
 .sc-classic .header__navMenu>li>a{width:100%!important;height:auto!important;color:#b3b3b3!important;border:0!important;text-align:left!important;float:left!important;font-size:16px!important;font-weight:600!important;padding:12px 44px!important}
 ul.header__navMenu.left.sc-list-nostyle > li:first-child > a.header__navMenuItem{padding-top:4px!important}
@@ -244,7 +245,9 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 .truncatedAudioInfo__collapse{display:none!important}
 .sc-classic .notificationIcon.activities:before{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23b3b3b3' data-encore-id='icon' role='img' aria-hidden='true' viewBox='0 0 16 16' class='Svg-sc-ytk21e-0 dYnaPI'%3E%3Cpath d='M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4zm-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569V5.5zm4.5 8a1 1 0 1 0 2 0H7z'%3E%3C/path%3E%3C/svg%3E")!important;width:16px!important}
 .header__userNavActivitiesButton.selected .notificationIcon.activities:before{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23b3b3b3' data-encore-id='icon' role='img' aria-hidden='true' viewBox='0 0 16 16' class='Svg-sc-ytk21e-0 dCAvla'%3E%3Cpath d='M8 0a5.5 5.5 0 0 0-5.5 5.5v3.069L.307 12.376A.75.75 0 0 0 .25 13h15.5a.75.75 0 0 0-.057-.624L13.5 8.567V5.5A5.5 5.5 0 0 0 8 0zm1.937 14.5H6.063a2 2 0 0 0 3.874 0z'%3E%3C/path%3E%3C/svg%3E")!important;width:16px!important}
-.sc-classic .notificationIcon.messages:before{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23b3b3b3' data-encore-id='icon' role='img' aria-hidden='true' viewBox='0 0 16 16' class='Svg-sc-ytk21e-0 dYnaPI'%3E%3Cpath d='M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z'%3E%3C/path%3E%3C/svg%3E")!important;width:16px!important}
+.notificationIcon.messages:before{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23b3b3b3' data-encore-id='icon' role='img' aria-hidden='true' viewBox='0 0 16 16' class='Svg-sc-ytk21e-0 dYnaPI'%3E%3Cpath d='M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z'%3E%3C/path%3E%3C/svg%3E")!important;width:16px!important}
+.header__navMenu>li>a.header__moreButton,.header__navMenu > li > a.header__moreButton{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23b3b3b3' data-encore-id='icon' role='img' aria-hidden='true' viewBox='0 0 16 16' class='Svg-sc-ytk21e-0 dYnaPI'%3E%3Cpath d='M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z'%3E%3C/path%3E%3C/svg%3E")!important;width:16px!important;font-size:0!important;height:16px!important;padding:0!important}
+.header__userNavMessagesButton{display:none!important}
 .sc-classic .selectionPlaylistBanner,.backgroundGradient__buffer{background:transparent!important}
 .l-content .sc-button{border:0!important;background:transparent!important;border-radius:50%!important}
 .sc-button-play.playButton{background:#1ed760!important}
@@ -437,6 +440,7 @@ button.BaseButton_BaseButton__QOcYl{background:rgb(255 255 255 / 10%)!important}
 .profileHeaderInfo__content.sc-media-content{padding-top:168px!important}
 #onetrust-pc-sdk{box-shadow:none!important;border:1px solid rgb(255 255 255 / 16%) !important}
 #onetrust-consent-sdk #onetrust-pc-sdk .ot-tgl input:checked + .ot-switch .ot-switch-nob{background:#1ed760!important}
+.userNetworkInfo .userAvatarBadge{margin:0 20px 20px 0}
 .profileHeader{margin:0 -20px!important;padding:26px!important;height:400px!important}
 .profileHeaderInfo br{display:none!important}
 .profileHeaderInfo__userName:before{content:"Nghệ sĩ được xác minh";text-transform:math-auto;font-size:14px;position:absolute;font-weight:400;padding-left:35px;top:5px!important}
