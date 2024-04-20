@@ -449,6 +449,9 @@ button.BaseButton_BaseButton__QOcYl{background:rgb(255 255 255 / 10%)!important}
 #onetrust-consent-sdk #onetrust-pc-sdk .ot-tgl input:checked + .ot-switch .ot-switch-nob{background:#1ed760!important}
 .userNetworkInfo .userAvatarBadge{margin:0 20px 20px 0}
 .sc-classic .insightsSidebarModule__plays{font-family:CircularSpTitle, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif)!important}
+.historicalPlays.m-player .historicalPlays__item{width:188px!important;float:left!important;margin:0 16px 16px 0 !important}
+.historicalPlays.m-player .sound__coverArt{width:188px!important;height:92px!important}
+.historicalPlays.m-player .sound__content{display:none!important}
 .profileHeader{margin:0 -20px!important;padding:26px!important;height:400px!important}
 .profileHeaderInfo br{display:none!important}
 .profileHeaderInfo__userName:before{content:"Nghệ sĩ được xác minh";text-transform:math-auto;font-size:14px;position:absolute;font-weight:400;padding-left:35px;top:5px!important}
@@ -457,18 +460,13 @@ button.BaseButton_BaseButton__QOcYl{background:rgb(255 255 255 / 10%)!important}
 .profileHeader__info{z-index:2!important}
 .fullHero,.profileHeaderBackground{background:#121212!important;backdrop-filter: blur(28.5px)!important;
     -webkit-backdrop-filter: blur(28.5px)!important}
-.fullHero:before{content:'';z-index:-1;width:500px;height:500px;background-image:radial-gradient(circle closest-side at 50% 50%, rgb(217 57 118 / 25%), transparent)!important;filter:blur(0);position:absolute;top:0;left:0;transform:translate(-18%, -35%);transition:10s;
-  animation: wiggle 10s infinite alternate!important;
-  animation-timing-function: linear!important;    
-}
+.fullHero:before{content:'';z-index:-1;width:1000px;height:1000px;background-image:radial-gradient(circle closest-side at 50% 50%, rgb(217 57 118 / 60%), transparent)!important;filter:blur(0);position:absolute;top:0;left:0;transform:translate(-45%,-45%);transition:10s;animation:wiggle 5s infinite alternate!important;animation-timing-function:linear!important}
+.fullHero:after{content:"";z-index:1;background:linear-gradient(177deg,rgba(18,18,18,0.3) 0%,#121212 100%)!important;width:-webkit-fill-available;height:-webkit-fill-available;position:absolute;top:0}
 @keyframes wiggle {
-  0% { transform: translate(-35%, -40%); }
-  50% { transform: translate(90%, -20%); }
-  100% { transform: translate(222%, -10%); }
+  0%{transform:translate(-45%,-45%);}
+  50%{transform:translate(30%,-20%);}
+  100%{transform:translate(96%,-10%);}
 }
-.historicalPlays.m-player .historicalPlays__item{width:188px!important;float:left!important;margin:0 16px 16px 0 !important}
-.historicalPlays.m-player .sound__coverArt{width:188px!important;height:92px!important}
-.historicalPlays.m-player .sound__content{display:none!important}
 /*----Responsive Design----*/
 @media (max-width:1200px) {
 .l-sidebar-right{display:none!important}	
