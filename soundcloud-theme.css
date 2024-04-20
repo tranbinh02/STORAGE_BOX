@@ -196,7 +196,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 .soundTitle__titleHeroContainer h1.soundTitle__title.sc-font.g-type-shrinkwrap-inline.g-type-shrinkwrap-large-primary.theme-dark,.fullHero__titleTextLineBig .fullHero__titleTextTitle{font-weight:900!important;font-size:60px!important;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;overflow:hidden;-webkit-box-orient:vertical;line-height:65px!important;padding:8px 0!important;    max-height:133px!important}
 .sc-classic .g-type-shrinkwrap-large-secondary{padding:0 5px!important}
 .fullHero__playerArea{display:none!important}
-.fullHero__foreground{padding:72px 20px 24px 274px!important}
+.fullHero__foreground{padding:72px 20px 24px 278px!important}
 .fullHero__foreground .playButton.m-stretch{transition:inherit!important}
 .listenArtworkWrapper .editImage.alwaysShowEditButton.customImage,.listenArtworkWrapper .sc-artwork>span{width:232px!important;height:232px!important}
 .image__lightOutline .image__full{box-shadow:none!important;border-radius:4px!important}
@@ -451,7 +451,17 @@ button.BaseButton_BaseButton__QOcYl{background:rgb(255 255 255 / 10%)!important}
 .profileHeaderInfo__userName:after{content:'';background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233d91f4' data-encore-id='icon' role='img' aria-hidden='true' class='Svg-sc-ytk21e-0 gxNUVX b0NcxAbHvRbqgs2S8QDg' viewBox='0 0 24 24'%3E%3Cpath d='M10.814.5a1.658 1.658 0 0 1 2.372 0l2.512 2.572 3.595-.043a1.658 1.658 0 0 1 1.678 1.678l-.043 3.595 2.572 2.512c.667.65.667 1.722 0 2.372l-2.572 2.512.043 3.595a1.658 1.658 0 0 1-1.678 1.678l-3.595-.043-2.512 2.572a1.658 1.658 0 0 1-2.372 0l-2.512-2.572-3.595.043a1.658 1.658 0 0 1-1.678-1.678l.043-3.595L.5 13.186a1.658 1.658 0 0 1 0-2.372l2.572-2.512-.043-3.595a1.658 1.658 0 0 1 1.678-1.678l3.595.043L10.814.5zm6.584 9.12a1 1 0 0 0-1.414-1.413l-6.011 6.01-1.894-1.893a1 1 0 0 0-1.414 1.414l3.308 3.308 7.425-7.425z'%3E%3C/path%3E%3C/svg%3E")!important;position:absolute;top:0;left:0;background-size:25px!important;width:25px!important;height:25px!important}
 .profileHeaderBackground:before{content:"";background:linear-gradient(360deg, #121212, transparent)!important;width:100%;position:absolute;z-index:1;height:-webkit-fill-available;z-index:1}
 .profileHeader__info{z-index:2!important}
-.fullHero,.profileHeaderBackground{background-image:linear-gradient(to right, #868f96 0%, #596164 100%)!important}
+.fullHero,.profileHeaderBackground{background:#121212!important;backdrop-filter: blur(28.5px)!important;
+    -webkit-backdrop-filter: blur(28.5px)!important}
+.fullHero:before,.profileHeaderBackground:before{content:'';z-index:-1;width:500px;height:500px;background-image:radial-gradient(circle closest-side at 50% 50%, rgb(255 48 64 / 28%), transparent)!important;filter:blur(0);position:absolute;top:0;left:0;transform:translate(-18%, -35%);transition:10s;
+  animation: wiggle 10s infinite alternate!important;
+  animation-timing-function: linear!important;    
+}
+@keyframes wiggle {
+  0% { transform: translate(-22%, -40%); }
+  50% { transform: translate(90%, -20%); }
+  100% { transform: translate(222%, -10%); }
+}
 
 /*----Responsive Design----*/
 @media (max-width:1200px) {
