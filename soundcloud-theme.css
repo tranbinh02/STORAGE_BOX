@@ -194,7 +194,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 .emptyNetworkPage{display:none!important}
 .sc-classic .moreActions__group:not(:first-child){border:0!important}
 .soundTitle__titleHeroContainer h1.soundTitle__title.sc-font.g-type-shrinkwrap-inline.g-type-shrinkwrap-large-primary.theme-dark,.fullHero__titleTextLineBig .fullHero__titleTextTitle{font-weight:900!important;font-size:60px!important;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;overflow:hidden;-webkit-box-orient:vertical;line-height:65px!important;padding:8px 0!important;    max-height:133px!important}
-.sc-classic .g-type-shrinkwrap-large-secondary{padding:0 5px!important}
+.sc-classic .g-type-shrinkwrap-large-secondary{padding:0 2px!important}
 .fullHero__playerArea{display:none!important}
 .fullHero__foreground{padding:72px 20px 24px 278px!important}
 .fullHero__foreground .playButton.m-stretch{transition:inherit!important}
@@ -458,7 +458,7 @@ button.BaseButton_BaseButton__QOcYl{background:rgb(255 255 255 / 10%)!important}
   animation-timing-function: linear!important;    
 }
 @keyframes wiggle {
-  0% { transform: translate(-22%, -40%); }
+  0% { transform: translate(-35%, -40%); }
   50% { transform: translate(90%, -20%); }
   100% { transform: translate(222%, -10%); }
 }
