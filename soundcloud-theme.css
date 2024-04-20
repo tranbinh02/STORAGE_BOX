@@ -453,7 +453,7 @@ button.BaseButton_BaseButton__QOcYl{background:rgb(255 255 255 / 10%)!important}
 .profileHeader__info{z-index:2!important}
 .fullHero,.profileHeaderBackground{background:#121212!important;backdrop-filter: blur(28.5px)!important;
     -webkit-backdrop-filter: blur(28.5px)!important}
-.fullHero:before,.profileHeaderBackground:before{content:'';z-index:-1;width:500px;height:500px;background-image:radial-gradient(circle closest-side at 50% 50%, rgb(255 48 64 / 28%), transparent)!important;filter:blur(0);position:absolute;top:0;left:0;transform:translate(-18%, -35%);transition:10s;
+.fullHero:before{content:'';z-index:-1;width:500px;height:500px;background-image:radial-gradient(circle closest-side at 50% 50%, rgb(255 48 64 / 28%), transparent)!important;filter:blur(0);position:absolute;top:0;left:0;transform:translate(-18%, -35%);transition:10s;
   animation: wiggle 10s infinite alternate!important;
   animation-timing-function: linear!important;    
 }
