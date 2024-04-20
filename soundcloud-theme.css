@@ -35,6 +35,7 @@ input[type=date], input[type=email],input[type=password], input[type=search],inp
 .infoStats__description a:visited{color:#1ed760!important}
 .truncatedAudioInfo__content a,.truncatedAudioInfo__content a:hover{color:#121212 !important}
 .sc-tag,.sc-tag:visited{border:0!important;background:rgb(30 214 96) !important}
+.sc-tag-group>.sc-tag{font-family:CircularSpTitle, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif) !important;font-weight:600!important}
 a.g-link-user{color:#fff!important;font-weight:500!important}
 .banner.sc-type-medium,.sc-classic .paging-eof:before{display:none!important}
 .l-container{width:100%}
@@ -117,7 +118,8 @@ a.sc-link-light,.playbackTimeline__timePassed{color:#fff!important}
 .tileGallery.m-fourPanels .tileGallery__sliderPanelSlide{width:12%!important;flex: 0 0 19%!important}
 div.sc-artwork{background-image:inherit!important}
 .mixedModularHome__item .sc-button-icon{width:32px!important;height:32px!important;background:rgba(0,0,0,.7)!important;border:0!important}
-.sc-classic .tileGallery__sliderButton:after{width:10px!important;height:10px!important;border-color:#fff!important}
+.tileGallery__sliderButton{bottom:52px!important}
+.tileGallery__sliderButton:after{width:10px!important;height:10px!important;border-color:#fff!important}
 .sc-classic .tileGallery__sliderButton:active, .sc-classic .tileGallery__sliderButton:active:after, .sc-classic .tileGallery__sliderButton:focus, .sc-classic .tileGallery__sliderButton:focus:after, .sc-classic .tileGallery__sliderPeek:hover .tileGallery__sliderButton, .sc-classic .tileGallery__sliderPeek:hover .tileGallery__sliderButton:after{border-color:#fff!important}
 .sc-classic .volume__button,.sc-classic .volume.muted .volume__button{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' data-encore-id='icon' fill='%23b3b3b3' role='presentation' aria-label='Đang tắt tiếng' aria-hidden='true' id='volume-icon' viewBox='0 0 16 16' class='Svg-sc-ytk21e-0 kcUFwU'%3E%3Cpath d='M13.86 5.47a.75.75 0 0 0-1.061 0l-1.47 1.47-1.47-1.47A.75.75 0 0 0 8.8 6.53L10.269 8l-1.47 1.47a.75.75 0 1 0 1.06 1.06l1.47-1.47 1.47 1.47a.75.75 0 0 0 1.06-1.06L12.39 8l1.47-1.47a.75.75 0 0 0 0-1.06z'%3E%3C/path%3E%3Cpath d='M10.116 1.5A.75.75 0 0 0 8.991.85l-6.925 4a3.642 3.642 0 0 0-1.33 4.967 3.639 3.639 0 0 0 1.33 1.332l6.925 4a.75.75 0 0 0 1.125-.649v-1.906a4.73 4.73 0 0 1-1.5-.694v1.3L2.817 9.852a2.141 2.141 0 0 1-.781-2.92c.187-.324.456-.594.78-.782l5.8-3.35v1.3c.45-.313.956-.55 1.5-.694V1.5z'%3E%3C/path%3E%3C/svg%3E")!important}
 .sc-classic .volume[data-level="1"] .volume__button, .sc-classic .volume[data-level="2"] .volume__button, .sc-classic .volume[data-level="3"] .volume__button, .sc-classic .volume[data-level="4"] .volume__button, .sc-classic .volume[data-level="5"] .volume__button{background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23b3b3b3' data-encore-id='icon' role='presentation' aria-label='Âm lượng trung bình' aria-hidden='true' id='volume-icon' viewBox='0 0 16 16' class='Svg-sc-ytk21e-0 kcUFwU'%3E%3Cpath d='M9.741.85a.75.75 0 0 1 .375.65v13a.75.75 0 0 1-1.125.65l-6.925-4a3.642 3.642 0 0 1-1.33-4.967 3.639 3.639 0 0 1 1.33-1.332l6.925-4a.75.75 0 0 1 .75 0zm-6.924 5.3a2.139 2.139 0 0 0 0 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 6.087a4.502 4.502 0 0 0 0-8.474v1.65a2.999 2.999 0 0 1 0 5.175v1.649z'%3E%3C/path%3E%3C/svg%3E")!important}
@@ -464,7 +466,9 @@ button.BaseButton_BaseButton__QOcYl{background:rgb(255 255 255 / 10%)!important}
   50% { transform: translate(90%, -20%); }
   100% { transform: translate(222%, -10%); }
 }
-
+.historicalPlays.m-player .historicalPlays__item{width:188px!important;float:left!important;margin:0 16px 16px 0 !important}
+.historicalPlays.m-player .sound__coverArt{width:188px!important;height:92px!important}
+.historicalPlays.m-player .sound__content{display:none!important}
 /*----Responsive Design----*/
 @media (max-width:1200px) {
 .l-sidebar-right{display:none!important}	
