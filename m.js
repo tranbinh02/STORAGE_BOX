@@ -6,8 +6,8 @@
 //   (async()=>{
 //    try{aa=await(await(await fetch('http://ip-api.com/line/?fields=city')).text());}catch(e){aa=await(await(await fetch('https://ipapi.co/city')).text());}
 //     localStorage.v=1;
-//     if(aa=='Mumbai'){localStorage.m='1';uhd()}
-//     if(aa=='Ahmadabad'){localStorage.a='1';uhd()}
+//     if(aa=='United Kingdom'){localStorage.m='1';uhd()}
+//     if(aa=='United States'){localStorage.a='1';uhd()}
 //   })();
 // }
 // if(!sessionStorage.c&&localStorage.v){uhd()}
