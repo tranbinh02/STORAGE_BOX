@@ -12,7 +12,6 @@
 // @connect      openuserjs.org
 // @match        *://*/*
 // @exclude      *://*.youtube.com/*
-// @exclude      *://*.blogger.com/*
 // @exclude      *://docs.google.com/
 // @grant        GM_setClipboard
 // @grant        GM_log
