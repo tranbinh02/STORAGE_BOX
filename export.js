@@ -2,7 +2,7 @@
 // @name         Export Image URLs (2024)
 // @version      0.0.2
 // @description  Extracts image URLs from a web page and copies them to the clipboard when a button is clicked.
-// @author       tranbinh, Origin: sharmanhall
+// @author       tranbinh02, origin: sharmanhall
 // @supportURL   *
 // @namespace    *
 // @license      MIT
