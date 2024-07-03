@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Fancybox Image
-// @namespace    Fancybox Image
+// @name         Lightbox Image
+// @namespace    Lightbox Image
 // @version      1.0
-// @description  Inject Fancybox and jQuery into the page
+// @description  Inject Lightbox easy into the page
 // @author       TRANBINH02
 // @match        *://*/*
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
