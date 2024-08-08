@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
 body{font-family:"Inter", sans-serif!important}
 .CodeMirror, .CodeMirror pre.CodeMirror-line, .CodeMirror pre.CodeMirror-line-like{font-family: "JetBrains Mono", monospace!important;font-size:18x;font-weight:600}
 .haXJ6e .zFM5pd,.HQ8yf, .HQ8yf .TpQm9d, .HQ8yf .TpQm9d:hover, .HQ8yf .TpQm9d:link, .HQ8yf .TpQm9d:visited,.qZiECe .Pao7hd .JuSvhf.Ce1Y1c, .qZiECe .Pao7hd .DPvwYc, .qZiECe .Pao7hd .NMm5M, .qZiECe .Pao7hd .DQGx6d,.haXJ6e .PwroAb .snByac{color:#694F8E!important}
@@ -43,5 +44,9 @@ body{font-family:"Inter", sans-serif!important}
 .haXJ6e .zFM5pd{background:transparent!important;box-shadow:0 0px 8px 0 rgb(0 0 0 / 5%)!important}
 .Iun9{display:block;position:absolute;top:60px;right:64px}
 .RiQjue.fv2j9{counter-reset:count}
-.gNK4lf:before{content:counter(count);counter-increment:count;position:absolute;text-align:center;z-index:9;font-size:12px;line-height:0;font-weight:400;padding:10px 8px;overflow:hidden;background:rgb(255 255 255 / 25%);backdrop-filter:blur(10px);color:#fff!important;min-width:auto;margin:16px;border-radius:20px}
+.gNK4lf:before{content:counter(count);counter-increment:count;position:absolute;text-align:center;z-index:9;font-size:12px;line-height:0;font-weight:400;padding:10px 8px;overflow:hidden;background:rgb(255 255 255 / 25%);backdrop-filter:blur(10px);color:#fff!important;min-width:auto;margin:16px;border-radius:22px}
 .haXJ6e .aaG7md:hover{background-color:transparent!important}
+.NPMd1c{width:100%!important}
+.cQK54c{margin-bottom:2px!important}
+.n8rJwb{padding-top:3px!important;margin-top:0!important}
+.hMNMsd{font-family: "Dongle", sans-serif!important;font-size:26px}
