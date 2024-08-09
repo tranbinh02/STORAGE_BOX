@@ -36,12 +36,20 @@
         '.ad-floater',
         '.no-ads',
         '.popUpBannerBox',
-        '#catfish'
+        '#catfish',
+        '.maintable.wp',
+        '.thread-side',
+        '#headerpcads',
+        '#catfishs_content',
+        '#annoying-ad',
+        '#pm_quangcao',
+        '#chilladv',
+        '.gnarty-offads',
     ];
 
     const observer = new MutationObserver((mutations) => {
         const elementsFound = new Set();
-        
+
         for (const mutation of mutations) {
             for (const node of mutation.addedNodes) {
                 if (node.nodeType === Node.ELEMENT_NODE) {
