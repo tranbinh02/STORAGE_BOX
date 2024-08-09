@@ -1,18 +1,55 @@
 // ==UserScript==
-// @name Block element
-// @namespace Block element
-// @description Chặn quảng cáo web phim
-// @version 0.1
-// @description *
-// @author *
-// @match *://*.*.*/*
-// @grant none
+// @name         Remove ADS Elements
+// @version      0.2
+// @description  Removes specific elements from the page
+// @author       tranbinh02, origin: sharmanhall
+// @supportURL   *
+// @namespace    *
+// @license      MIT
+// @connect      greasyfork.org
+// @connect      sleazyfork.org
+// @connect      github.com
+// @connect      openuserjs.org
+// @match        *://*/*
+// @grant        GM_setClipboard
+// @grant        GM_log
+// @compatible   chrome
+// @compatible   firefox
+// @compatible   edge
+// @compatible   opera
+// @compatible   safari
+// @run-at       document-idle
+// @icon         *
 // ==/UserScript==
-const injectCSS = css => {
-let el = document.createElement('style');
-el.type = 'text/css';
-el.innerText = css;
-document.head.appendChild(el);
-return el;
-};
-injectCSS('#popads, .ad-floater, #headerpcads, #catfishs_content, #hidemobile, #pm_quangcao, #an_catfish, #topplayerads, #overlay, .overlay_content, .banner-flex, #top_addd, .ads, #ads, #xs-addd0, .popUpBannerBox, #catfish, .no-ads, #top-banner, .promotion-popup, #preload{display: none!important}');
+
+(function() {
+    'use strict';
+    const elementsToRemove = [
+        '.ad-container',
+        '.watch-banner-2',
+        '#catfish_content',
+        '.ads',
+        '#ads',
+        '.promotion-popup-content',
+        '.promotion-popup',
+        '.ad-floater',
+        '.no-ads',
+        '.popUpBannerBox',
+        '#catfish',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+    ];
+    function removeElements() {
+        elementsToRemove.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(element => {
+                element.remove();
+            });
+        });
+    }
+    removeElements();
+})();
