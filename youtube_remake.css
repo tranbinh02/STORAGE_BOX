@@ -15,7 +15,7 @@ ytd-thumbnail-overlay-time-status-renderer,ytd-thumbnail-overlay-bottom-panel-re
 .metadata.ytd-compact-video-renderer{padding:0 8px!important}
 ytd-rich-section-renderer .style-scope.ytd-rich-section-renderer{display:none!important}
 .details.ytd-compact-video-renderer{position:absolute!important;bottom:0!important;background: linear-gradient(180deg, rgba(18, 18, 18, 0) 0%, #121212 100%);border-radius:0 0 8px 8px!important}
-.style-scope.ytd-rich-grid-media #details{position:absolute!important;bottom:0!important;background: linear-gradient(180deg, rgba(18, 18, 18, 0) 0%, #121212 100%);border-radius:0 0 8px 8px!important;padding:10px!important}
+.style-scope.ytd-rich-grid-media #details{position:absolute!important;width:-webkit-fill-available;bottom:0!important;background: linear-gradient(180deg, rgba(18, 18, 18, 0) 0%, #121212 100%);border-radius:0 0 8px 8px!important;padding:10px!important}
 .style-scope.ytd-rich-grid-media .yt-simple-endpoint,.style-scope.ytd-rich-grid-media h3.ytd-rich-grid-media,.style-scope.ytd-rich-grid-media #video-title,yt-icon.ytd-badge-supported-renderer{color:#fff}
 .style-scope.ytd-rich-item-renderer yt-formatted-string[has-link-only_]:not([force-default-style]) a.yt-simple-endpoint.yt-formatted-string,#channel-name.long-byline.ytd-video-meta-block,#metadata-line.ytd-video-meta-block{color:#eee!important}
 #meta.ytd-rich-grid-media{padding-right:0!important}
