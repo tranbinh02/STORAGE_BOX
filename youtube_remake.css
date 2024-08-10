@@ -39,4 +39,4 @@ ytd-playlist-panel-video-renderer[watch-color-update][can-reorder]:hover.draggin
 ytd-thumbnail-overlay-bottom-panel-renderer{margin:8px!important}
 ytd-rich-item-renderer{margin-bottom:20px!important}
 #guide-content.ytd-app{}
-#guide-content.ytd-app,#chips-wrapper.ytd-feed-filter-chip-bar-renderer,#background.ytd-masthead,#page-header.ytd-tabbed-page-header{background:transparent!important}
+#guide-content.ytd-app,#page-header-container.ytd-tabbed-page-header, #tabs-container.ytd-tabbed-page-header,#page-header.ytd-tabbed-page-header{background:transparent!important}
