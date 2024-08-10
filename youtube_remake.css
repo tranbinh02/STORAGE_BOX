@@ -9,7 +9,7 @@ ytd-logo:before{position:absolute;margin:18px 22px;
 #home-page-skeleton .skeleton-bg-color{background-color:#ebebeb!important}
 ytd-watch-metadata[title-headline-xs] h1.ytd-watch-metadata,.page-header-view-model-wiz__page-header-title--page-header-title-large{font-weight:800!important}
 .details.style-scope.ytd-compact-video-renderer .secondary-metadata.style-scope.ytd-compact-video-renderer{display:none!important}
-.details.style-scope.ytd-compact-video-renderer a,h3.ytd-compact-video-renderer{color:#fff!important}
+.details.style-scope.ytd-compact-video-renderer a,h3.ytd-compact-video-renderer,#button.ytd-menu-renderer yt-icon.ytd-menu-renderer{color:#fff!important}
 ytd-compact-video-renderer:not([watch-feed-big-thumbs]) ytd-thumbnail.ytd-compact-video-renderer{position:inherit!important;width:100%!important;height:106px!important}
 yt-chip-cloud-renderer:not([no-top-margin]) yt-chip-cloud-chip-renderer.yt-chip-cloud-renderer{margin-top:0!important}
 .yt-core-image--content-mode-scale-aspect-fill{object-fit:cover!important}
