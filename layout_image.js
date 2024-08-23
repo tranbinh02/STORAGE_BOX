@@ -26,11 +26,12 @@
     'use strict';
     const customCSS = `
         .pcb td,#basicExample{width:100%;float:left;display:grid;grid-template-columns:repeat(5,1fr);grid-gap:12px 12px;margin:20px 0;padding:0}
-        .pcb img,#basicExample img{float:left;width:-webkit-fill-available;height:-webkit-fill-available;max-height:180px;object-fit:cover;border-radius:12px;margin:0;padding:0;position:relative;cursor:pointer;break-inside:avoid;transition:all .6s ease;opacity:1}
+        .pcb img,#basicExample img{float:left;width:-webkit-fill-available;height:-webkit-fill-available;max-height:180px;object-fit:cover;border-radius:12px;margin:0;padding:0;position:relative;cursor:pointer;break-inside:avoid;transition:all .3s ease-in-out;opacity:1}
         .pcb br,.pcb hr,#basicExample br,#basicExample hr{display:none!important}
         #basicExample img{max-height:220px!important}
         .ct2 .mn,.post-list .post.first{width:100%!important}
         .first .post-bd{width:-webkit-fill-available!important}
+        .pcb:hover img:not(:hover),#basicExample:hover img:not(:hover){opacity:.1;filter:blur(10px)}
     `;
     const style = document.createElement('style');
     style.textContent = customCSS;
