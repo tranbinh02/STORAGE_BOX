@@ -6,7 +6,6 @@
 // @supportURL   *
 // @namespace    *
 // @license      MIT
-// @connect      greasyfork.org
 // @connect      sleazyfork.org
 // @connect      github.com
 // @connect      openuserjs.org
