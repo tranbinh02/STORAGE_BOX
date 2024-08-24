@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
 body{font-family:"Inter", sans-serif!important}
-.CodeMirror, .CodeMirror pre.CodeMirror-line, .CodeMirror pre.CodeMirror-line-like,.CodeMirror-dialog input{font-family: "JetBrains Mono", monospace!important;font-size:18x;font-weight:600}
+.CodeMirror, .CodeMirror pre.CodeMirror-line, .CodeMirror pre.CodeMirror-line-like,.CodeMirror-dialog input{font-family: "JetBrains Mono", monospace!important;font-size:18x;font-weight:400!important}
 .haXJ6e .zFM5pd,.HQ8yf, .HQ8yf .TpQm9d, .HQ8yf .TpQm9d:hover, .HQ8yf .TpQm9d:link, .HQ8yf .TpQm9d:visited,.qZiECe .Pao7hd .JuSvhf.Ce1Y1c, .qZiECe .Pao7hd .DPvwYc, .qZiECe .Pao7hd .NMm5M, .qZiECe .Pao7hd .DQGx6d,.haXJ6e .PwroAb .snByac,.WsnWZd,.haXJ6e .WiC6jc{color:#694F8E!important}
 .qZiECe .Pao7hd .JuSvhf.Ce1Y1c, .qZiECe .Pao7hd .DPvwYc, .qZiECe .Pao7hd .NMm5M, .qZiECe .Pao7hd .DQGx6d{fill:#694F8E!important;color:#694F8E!important}
 .vAOvBb .jPVgtf{background:#694F8E!important}
 .HQ8yf .TpQm9d.kFANI, .HQ8yf .TpQm9d.kFANI:hover, .HQ8yf .TpQm9d.kFANI:link, .HQ8yf .TpQm9d.kFANI:visited{color:#000!important}
-.n8rJwb{width:100%!important; max-width:100%!important;}
+.n8rJwb{width:100%!important; max-width:100%!important}
 .RiQjue{display:grid;grid-template-columns:repeat(10,1fr);grid-gap:10px 10px;margin:0;padding:0}
 .oqIa7e{margin:0!important;padding:6px!important}
 .haXJ6e .kurlme{font-size:12.8px!important;font-weight:600!important}
@@ -18,7 +18,7 @@ body{font-family:"Inter", sans-serif!important}
     .U1jxdb .UMrnmb-yXBf7b-QA0Szd-QFG6Bd-bN97Pc{min-inline-size:0!important}
 .SpTCHb{overflow-y:hidden!important}
 .zRRGMc{padding:10px 0 10px 20px!important}
-.qZiECe{padding-right: 0!important;}
+.qZiECe{padding-right: 0!important}
 .UMrnmb-yXBf7b-QA0Szd-h2P4hd{box-shadow:0 0 20px 0 rgba(0, 0, 0, 0.05) !important}
 .FJvM6e.MpCTKe{margin-left:180px!important}
 .oqIa7e:focus-within .FeZNBc, .oqIa7e:hover .FeZNBc{right:0!important}
@@ -49,7 +49,7 @@ body{font-family:"Inter", sans-serif!important}
 .n8rJwb{padding-top:3px!important;padding-left:0!important;margin-top:0!important}
 .hMNMsd{font-family: "Dongle", sans-serif!important;font-size:26px;font-weight:500}
 .haXJ6e .Un8wMb .DPvwYc{color:#c9c9c9;fill:#c9c9c9}
-.xLh0Gb{position:absolute;top:0;z-index:9;right:0;border:0;box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1)!important;border-radius:0 0 0 20px!important;margin:0}
+.xLh0Gb{position:absolute;top:0;z-index:2!important;right:0;border:0;box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1)!important;border-radius:0 0 0 20px!important;margin:0 18px!important}
 .fkIfyc, .L3ijne{height:50px!important;padding:0!important}
 .eKQNab{margin:0 2px!important}
 .haXJ6e .mUbCce.fKz7Od:hover{background:transparent!important}
@@ -66,3 +66,4 @@ body{font-family:"Inter", sans-serif!important}
 .mUbCce>.TpQm9d{color:#694F8E}
 .xjKiLb{top:58%!important}
 .uZsIBe{margin-left:8px}
+.eejsDc{overflow:hidden!important}
