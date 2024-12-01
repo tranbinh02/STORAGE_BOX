@@ -8,7 +8,6 @@
 // @match        *://*/*
 // @grant        GM_addStyle
 // @grant        GM_setValue
-// @grant        GM_getValue
 // ==/UserScript==
 
 (function() {
