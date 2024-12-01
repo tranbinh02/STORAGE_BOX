@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         Remove ADS Every time
 // @namespace    http://tampermonkey.net/
-// @version      0.3
-// @description  A custom toggle switch that can hide/show specific page elements
+// @version      0.4
+// @description  A custom toggle switch that can hide/show specific page elements with local storage persistence
 // @exclude      *://drive.google.com/*
 // @exclude      *://www.drive.google.com/*
 // @match        *://*/*
 // @grant        GM_addStyle
+// @grant        GM_setValue
+// @grant        GM_getValue
 // ==/UserScript==
 
 (function() {
@@ -29,7 +31,7 @@
         'ads'
     ];
 
-    // Inject CSS
+    // Inject CSS (same as previous script)
     GM_addStyle(`
         @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 
@@ -149,11 +151,11 @@
     `);
 
     // Create and inject the HTML
-    function createToggleSwitch() {
+    function createToggleSwitch(isChecked) {
         const switchDiv = document.createElement('div');
         switchDiv.className = 'switch';
         switchDiv.innerHTML = `
-            <input id="tgl" type="checkbox"/>
+            <input id="tgl" type="checkbox" ${isChecked ? 'checked' : ''}/>
             <label class="on" for="tgl">Hiện quảng cáo</label>
             <label class="off" for="tgl">Tắt quảng cáo</label>
             <span></span>
@@ -165,8 +167,12 @@
     function toggleElementVisibility(checkbox) {
         checkbox.addEventListener('change', function() {
             const body = document.body;
+            const isChecked = this.checked;
 
-            if (this.checked) {
+            // Save the state to local storage
+            GM_setValue('adBlockerState', isChecked);
+
+            if (isChecked) {
                 // Add a class to body to trigger hiding
                 body.classList.add('hidden-elements');
 
@@ -202,11 +208,20 @@
 
     // Function to add the toggle switch to the page
     function addToggleSwitch() {
-        const switchElement = createToggleSwitch();
+        // Retrieve the last saved state from local storage
+        const lastState = GM_getValue('adBlockerState', false);
+
+        // Create switch with last saved state
+        const switchElement = createToggleSwitch(lastState);
         const checkbox = switchElement.querySelector('input');
 
         document.body.appendChild(switchElement);
         toggleElementVisibility(checkbox);
+
+        // Manually trigger change event to apply initial state
+        if (lastState) {
+            checkbox.dispatchEvent(new Event('change'));
+        }
     }
 
     // Run the script
