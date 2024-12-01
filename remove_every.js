@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Remove ADS Every time
 // @namespace    http://tampermonkey.net/
-// @version      0.4
-// @description  A custom toggle switch that can hide/show specific page elements with local storage persistence
+// @version      0.5
+// @description  A custom toggle switch that can remove specific page elements with local storage persistence
 // @exclude      *://drive.google.com/*
 // @exclude      *://www.drive.google.com/*
 // @match        *://*/*
@@ -14,8 +14,8 @@
 (function() {
     'use strict';
 
-    // List of elements to hide
-    const elementsToHide = [
+    // List of elements to remove
+    const elementsToRemove = [
         'login-popbox-detail-new',
         'loginwrap-new',
         're-popbox',
@@ -24,8 +24,8 @@
         'toastify',
         'floatads',
         'overlay',
-        'header',
-        'footer',
+        'gmp_header',
+        'footer_container',
         'banner',
         '@login',
         'ads'
@@ -37,12 +37,6 @@
 
         body {
             transition: opacity 0.3s ease;
-        }
-
-        .hidden-elements .toggle-hidden {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
         }
 
         * {
@@ -68,10 +62,16 @@
             padding: 0;
             margin: 0;
             cursor: pointer;
-            background: none;
             -webkit-tap-highlight-color: rgba(0,0,0,0);
         }
-
+        [type=checkbox], [type=radio],[type=checkbox]:checked, [type=radio]:checked[type=checkbox]:checked, [type=radio]:checked{
+            background:none!important;
+            border:0!important;
+        }
+        [type=checkbox]:focus, [type=radio]:focus{
+            border:0!important;
+            outline:none!important
+        }
         .switch input:checked ~ .on {
             transform: translateY(0) scale(1);
             opacity: 1;
@@ -94,6 +94,7 @@
             position: absolute;
             right: 12px;
             display: block;
+            font-family: Varela Round!important;
             font-size: 12.8px;
             font-weight: 400;
             line-height: 20px;
@@ -150,6 +151,9 @@
         }
     `);
 
+    // Store removed elements to restore later
+    const removedElements = [];
+
     // Create and inject the HTML
     function createToggleSwitch(isChecked) {
         const switchDiv = document.createElement('div');
@@ -163,45 +167,54 @@
         return switchDiv;
     }
 
-    // Function to toggle element visibility
-    function toggleElementVisibility(checkbox) {
+    // Function to toggle element removal
+    function toggleElementRemoval(checkbox) {
         checkbox.addEventListener('change', function() {
-            const body = document.body;
             const isChecked = this.checked;
 
             // Save the state to local storage
             GM_setValue('adBlockerState', isChecked);
 
             if (isChecked) {
-                // Add a class to body to trigger hiding
-                body.classList.add('hidden-elements');
-
-                // Hide specific elements
-                elementsToHide.forEach(selector => {
+                // Remove specific elements
+                elementsToRemove.forEach(selector => {
                     // Try multiple selection methods
                     const byId = document.getElementById(selector);
                     const byClass = document.getElementsByClassName(selector);
                     const byAttr = document.querySelector(`[id*="${selector}"]`);
                     const byDataAttr = document.querySelector(`[data-${selector}]`);
 
-                    // Add toggle-hidden class to found elements
-                    if (byId) byId.classList.add('toggle-hidden');
+                    // Remove found elements and store for potential restoration
+                    if (byId) {
+                        removedElements.push({ element: byId, parent: byId.parentNode });
+                        byId.remove();
+                    }
 
                     Array.from(byClass).forEach(el => {
-                        el.classList.add('toggle-hidden');
+                        removedElements.push({ element: el, parent: el.parentNode });
+                        el.remove();
                     });
 
-                    if (byAttr) byAttr.classList.add('toggle-hidden');
-                    if (byDataAttr) byDataAttr.classList.add('toggle-hidden');
+                    if (byAttr) {
+                        removedElements.push({ element: byAttr, parent: byAttr.parentNode });
+                        byAttr.remove();
+                    }
+
+                    if (byDataAttr) {
+                        removedElements.push({ element: byDataAttr, parent: byDataAttr.parentNode });
+                        byDataAttr.remove();
+                    }
                 });
             } else {
-                // Remove the hiding class from body
-                body.classList.remove('hidden-elements');
-
-                // Restore visibility of previously hidden elements
-                document.querySelectorAll('.toggle-hidden').forEach(el => {
-                    el.classList.remove('toggle-hidden');
+                // Restore previously removed elements
+                removedElements.forEach(({ element, parent }) => {
+                    if (parent) {
+                        parent.appendChild(element);
+                    }
                 });
+
+                // Clear the removedElements array
+                removedElements.length = 0;
             }
         });
     }
@@ -216,7 +229,7 @@
         const checkbox = switchElement.querySelector('input');
 
         document.body.appendChild(switchElement);
-        toggleElementVisibility(checkbox);
+        toggleElementRemoval(checkbox);
 
         // Manually trigger change event to apply initial state
         if (lastState) {
