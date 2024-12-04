@@ -160,8 +160,8 @@
         switchDiv.className = 'switch';
         switchDiv.innerHTML = `
             <input id="tgl" type="checkbox" ${isChecked ? 'checked' : ''}/>
-            <label class="on" for="tgl">Hiện quảng cáo</label>
-            <label class="off" for="tgl">Tắt quảng cáo</label>
+            <label class="on" for="tgl">Tắt quảng cáo</label>
+            <label class="off" for="tgl">Hiện quảng cáo</label>
             <span></span>
         `;
         return switchDiv;
