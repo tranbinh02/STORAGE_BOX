@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Image Link Scraper
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.0
 // @description  Extracts images and their links from elements with class "images"
 // @author       You
 // @match        *://*/*
@@ -30,7 +30,7 @@
     }
 
     function getImageInfo() {
-        const imageContainers = document.getElementsByClassName('images');
+        const imageContainers = document.getElementsByTagName('body');
         const results = [];
         let totalImages = 0;
 
@@ -43,22 +43,14 @@
                     totalImages++;
                     results.push({
                         imageUrl: img.src,
-                        linkUrl: link.href
+                        linkUrl: link.href,
+                        altText: img.alt || 'No alt text'
                     });
                 });
             });
         });
 
         return { totalImages, results };
-    }
-
-    function copyToClipboard(text) {
-        navigator.clipboard.writeText(text).then(() => {
-            alert('All URLs copied to clipboard!');
-        }).catch(err => {
-            console.error('Failed to copy text: ', err);
-            alert('Failed to copy URLs. Please check console for details.');
-        });
     }
 
     function displayResults(data) {
@@ -69,24 +61,6 @@
         header.textContent = `Found ${data.totalImages} images`;
         header.style.marginTop = '0';
         container.appendChild(header);
-
-        // Create copy button
-        const copyButton = document.createElement('button');
-        copyButton.textContent = 'Copy All URLs';
-        copyButton.style.cssText = `
-            padding: 5px 10px;
-            margin: 10px 0;
-            background: #2196F3;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        `;
-        copyButton.onclick = () => {
-            const allUrls = data.results.map(item => item.linkUrl).join('\n');
-            copyToClipboard(allUrls);
-        };
-        container.appendChild(copyButton);
 
         // Create close button
         const closeButton = document.createElement('button');
@@ -111,12 +85,18 @@
             margin: 0;
         `;
 
-        data.results.forEach(item => {
+        data.results.forEach((item, index) => {
             const listItem = document.createElement('li');
             listItem.style.marginBottom = '10px';
             listItem.innerHTML = `
                 <div style="margin-bottom: 5px;">
+                    <strong>Image ${index + 1}:</strong>
+                    <a href="${item.imageUrl}" target="_blank">View Image</a>
+                    <br>
+                    <strong>Link URL:</strong>
                     <a href="${item.linkUrl}" target="_blank">${item.linkUrl}</a>
+                    <br>
+                    <strong>Alt Text:</strong> ${item.altText}
                 </div>
                 <hr style="margin: 5px 0;">
             `;
