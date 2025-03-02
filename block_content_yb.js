@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      1.4
 // @description  Blocks YouTube videos containing specific words in the title
-// @author       You
+// @author       baopingsheng
 // @match        https://www.youtube.com/*
 // @grant        none
 // @run-at       document-start
