@@ -13,7 +13,7 @@
     'use strict';
 
     // List of blocked words (all lowercase for case-insensitive matching)
-    const BLOCKED_WORDS = ['bolero', 'trữ tình', 'nhạc vàng', 'bất hủ', 'sến'];
+    const BLOCKED_WORDS = ['kinh dị', 'ma', 'quỷ'];
 
     // Track if we're currently in a blocked state
     let isCurrentlyBlocked = false;
@@ -156,62 +156,68 @@
         }
     }
 
-    // Function to block content
-    function blockContent() {
-        isCurrentlyBlocked = true;
+// Function to block content
+function blockContent() {
+    isCurrentlyBlocked = true;
 
-        // Get the video player
-        const videoPlayer = document.querySelector('#player');
-        if (videoPlayer) {
-            // Save the original player for later restoration
-            if (!videoPlayer.dataset.blocked) {
-                // Mark as blocked and save original display style
-                videoPlayer.dataset.blocked = 'true';
-                videoPlayer.dataset.originalDisplay = videoPlayer.style.display || '';
+    // Get the video player
+    const videoPlayer = document.querySelector('#player');
+    if (videoPlayer) {
+        // Save the original player for later restoration
+        if (!videoPlayer.dataset.blocked) {
+            // Mark as blocked and save original display style
+            videoPlayer.dataset.blocked = 'true';
+            videoPlayer.dataset.originalDisplay = videoPlayer.style.display || '';
 
-                // Stop the video and audio playback
-                stopVideoAndAudio();
+            // Stop the video and audio playback
+            stopVideoAndAudio();
 
-                // Hide the player
-                videoPlayer.style.display = 'none';
+            // Hide the player
+            videoPlayer.style.display = 'none';
 
-                // Remove any existing message first to prevent duplicates
-                removeBlockedMessage();
+            // Remove any existing message first to prevent duplicates
+            removeBlockedMessage();
 
-                // Create and display the message
-                const blockedMessage = document.createElement('div');
-                blockedMessage.id = 'content-blocked-message';
-                blockedMessage.style.cssText = `
-                    background-color: #000;
-                    border-radius: 0;
-                    color: #fff;
-                    font-family: 'YouTube Sans', sans-serif;
-                    font-size: 18px;
-                    font-weight: 600;
-                    margin: 20px auto;
-                    width: -webkit-fill-available;
-                    max-width: -webkit-fill-available;
-                    padding: 40px;
-                    text-align: center;
-                `;
-                blockedMessage.textContent = 'Video không khả dụng ở khu vực của bạn.';
+            // Create and display the message
+            const blockedMessage = document.createElement('div');
+            blockedMessage.id = 'content-blocked-message';
+            blockedMessage.style.cssText = `
+                user-select: none;
+                background-color: #000;
+                display: flex;
+                justify-content: center;
+                place-items: center;
+                text-align: center;
+                border-radius: 12px;
+                color: #fff;
+                font-family: 'YouTube Sans', sans-serif;
+                font-size: 22px;
+                font-weight: 600;
+                margin: 0 auto;
+                margin-bottom: 16px;
+                width: -webkit-fill-available;
+                max-width: -webkit-fill-available;
+                height: 708px;
+                padding: 0;
+            `;
+            blockedMessage.textContent = 'Video không khả dụng ở khu vực của bạn.';
 
-                // Insert the message before the comments section
-                const commentsSection = document.querySelector('#comments');
-                if (commentsSection) {
-                    commentsSection.parentNode.insertBefore(blockedMessage, commentsSection);
-                } else {
-                    // Fallback if comments section not found
-                    videoPlayer.parentNode.insertBefore(blockedMessage, videoPlayer.nextSibling);
-                }
+            // Insert the message before the h1 title
+            const titleElement = document.querySelector('h1.ytd-watch-metadata');
+            if (titleElement) {
+                titleElement.parentNode.insertBefore(blockedMessage, titleElement);
+            } else {
+                // Fallback if title element not found
+                videoPlayer.parentNode.insertBefore(blockedMessage, videoPlayer.nextSibling);
             }
         }
-
-        // Keep the preemptive style in place
-        if (!document.getElementById('preemptive-block-style')) {
-            preemptivelyBlock();
-        }
     }
+
+    // Keep the preemptive style in place
+    if (!document.getElementById('preemptive-block-style')) {
+        preemptivelyBlock();
+    }
+}
 
     // Function to unblock content
     function unblockContent() {
@@ -373,3 +379,4 @@
     // Start immediately
     initialize();
 })();
+
