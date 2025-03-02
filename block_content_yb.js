@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Content Blocker
 // @namespace    http://tampermonkey.net/
-// @version      1.4
+// @version      1.0
 // @description  Blocks YouTube videos containing specific words in the title
 // @author       baopingsheng
 // @match        https://www.youtube.com/*
