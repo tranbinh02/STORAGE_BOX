@@ -12,6 +12,24 @@
 (function() {
     'use strict';
 
+    // CSS custom
+    function addCustomStyles() {
+        const style = document.createElement('style');
+        style.type = 'text/css';
+        style.textContent = `
+            ytd-rich-section-renderer.ytd-rich-grid-renderer,
+            ytd-guide-section-renderer.style-scope ytd-guide-entry-renderer:nth-child(2) {
+                display: none !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', addCustomStyles);
+    } else {
+        addCustomStyles();
+    }
+
     // List of blocked words (all lowercase for case-insensitive matching)
     const BLOCKED_WORDS = ['kinh dị', 'ma', 'quỷ'];
 
