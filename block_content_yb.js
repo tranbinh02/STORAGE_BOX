@@ -151,7 +151,7 @@
                 clearInterval(window._titleCheckInterval);
                 checkAndBlockContent();
             }
-        }, 50); // Check very frequently until title is available
+        }, 0); // Check very frequently until title is available
     }
 
     // When DOM is fully loaded
