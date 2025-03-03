@@ -30,7 +30,7 @@
     }
 
     // List of blocked words (all lowercase for case-insensitive matching)
-    const BLOCKED_WORDS = ['ma', 'quỷ', 'kinh dị', 'ám ảnh', 'yêu quái', 'quái vật', 'siêu nhiên', 'bóng tối', 'lời thuật', 'ác quỷ', 'tử thần', 'địa vô', 'huyền bí', 'rùng', 'thây ma', 'xác sống', 'hắc trầm', 'nghi lễ', 'bùa chú', 'oan linh hồn', 'hoang đường', 'huyễn hoặc'];
+    const BLOCKED_WORDS = ['reddit','nosleep','ma', 'quỷ', 'kinh dị', 'ám ảnh', 'yêu quái', 'quái vật', 'siêu nhiên', 'bóng tối', 'lời thuật', 'ác quỷ', 'tử thần', 'địa vô', 'huyền bí', 'rùng', 'thây ma', 'xác sống', 'hắc trầm', 'nghi lễ', 'bùa chú', 'oan linh hồn', 'hoang đường', 'huyễn hoặc'];
 
 
     // Track if we're currently in a blocked state
