@@ -31,20 +31,11 @@
     }
 
     // List of blocked words (all lowercase for case-insensitive matching)
-    const BLOCKED_WORDS = [
-      'bolero', 'trữ tình', 'nhạc vàng', 'bất hủ', 'sến', 'sông nước', 'đồng quê',
-      'quê hương', 'dân ca', 'miền tây', 'bài ca', 'đốt pháo', 'nhạc sến', 'pops music',
-      'pháo hoa', 'miệt vườn', 'dương hồng loan', 'lưu ánh loan', 'lê sang',
-      'hoàng hải', 'người xưa', 'thu hường', 'quang lập','petersounds','phương ý',
-      'schannel','theanh28','roblox', 'free fire', 'beatvn','reddit','nosleep','deep web','dark web','explain nation','snook','rùng rợn'
-    ];
+    const BLOCKED_WORDS = ['roblox', 'free fire','explain nation','snook','reddit','nosleep','deep web','dark web','rùng rợn','ma', 'quỷ', 'kinh dị', 'ám ảnh', 'yêu quái', 'quái vật', 'siêu nhiên', 'bóng tối', 'lời thuật', 'ác quỷ', 'tử thần', 'địa vô', 'huyền bí', 'rùng', 'thây ma', 'xác sống', 'hắc trầm', 'nghi lễ', 'bùa chú', 'oan linh hồn', 'hoang đường', 'huyễn hoặc'];
+
 
     // Track if we're currently in a blocked state
     let isCurrentlyBlocked = false;
-    // Store original volume values to restore them later
-    let originalVolumes = new WeakMap();
-    // Store original muted states
-    let originalMutedStates = new WeakMap();
 
     // Function to check for shorts in URL and redirect
     function checkAndRedirectShorts() {
@@ -95,77 +86,39 @@
             }
         `;
         document.head.appendChild(style);
-
-        // We'll also need to continually intercept any video/audio that might start
-        startAudioVideoBlockingInterval();
     }
 
-    // Intercept any attempt to play audio/video only if content is blocked
+    // Intercept any attempt to play audio/video when blocked
     function startAudioVideoBlockingInterval() {
+        // Clear any existing interval first
         if (window._blockingInterval) {
             clearInterval(window._blockingInterval);
+            window._blockingInterval = null;
         }
 
-        window._blockingInterval = setInterval(() => {
-            if (!isCurrentlyBlocked) return;
-
-            const videos = document.querySelectorAll('video');
-            videos.forEach(video => {
-                // Store original values if not already stored
-                if (!originalVolumes.has(video)) {
-                    originalVolumes.set(video, video.volume);
-                }
-                if (!originalMutedStates.has(video)) {
-                    originalMutedStates.set(video, video.muted);
-                }
-
-                if (!video.paused) {
-                    video.pause();
-                }
-                if (!video.muted) {
+        // Only start the interval if content is blocked
+        if (isCurrentlyBlocked) {
+            window._blockingInterval = setInterval(() => {
+                const videos = document.querySelectorAll('video');
+                videos.forEach(video => {
+                    if (!video.paused) {
+                        video.pause();
+                    }
                     video.muted = true;
-                }
-                video.volume = 0;
+                });
 
-                // Add event listeners to prevent playing
-                if (!video.dataset.blockListenersAdded) {
-                    video.dataset.blockListenersAdded = 'true';
-                    video.addEventListener('play', function(e) {
-                        if (isCurrentlyBlocked) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            this.pause();
-                        }
-                    }, true);
-
-                    // Intercept play attempts
-                    const originalPlay = video.play;
-                    video.play = function() {
-                        if (isCurrentlyBlocked) {
-                            return Promise.reject(new DOMException('NotAllowedError'));
-                        }
-                        return originalPlay.apply(this, arguments);
-                    };
+                // Try to use YouTube player API if available
+                const player = document.querySelector('#movie_player');
+                if (player) {
+                    if (typeof player.pauseVideo === 'function') {
+                        player.pauseVideo();
+                    }
+                    if (typeof player.mute === 'function') {
+                        player.mute();
+                    }
                 }
-            });
-
-            // Try to access YouTube player API if available
-            const player = document.querySelector('#movie_player');
-            if (player && typeof player.pauseVideo === 'function' && typeof player.isMuted === 'function') {
-                // Store original muted state if not already stored
-                if (!player.dataset.originalMutedState) {
-                    player.dataset.originalMutedState = player.isMuted();
-                }
-                // Store original volume if not already stored
-                if (!player.dataset.originalVolume) {
-                    player.dataset.originalVolume = player.getVolume();
-                }
-
-                player.pauseVideo();
-                player.mute();
-                player.setVolume(0);
-            }
-        }, 100); // Reduced check frequency to be less intensive
+            }, 200);
+        }
     }
 
     // Wait for title element to become available
@@ -180,7 +133,7 @@
                 clearInterval(window._titleCheckInterval);
                 checkAndBlockContent();
             }
-        }, 100); // Reduced check frequency
+        }, 100);
     }
 
     // When DOM is fully loaded
@@ -274,18 +227,35 @@
 
         // Keep the preemptive style in place
         if (!document.getElementById('preemptive-block-style')) {
-            preemptivelyBlock();
+            const style = document.createElement('style');
+            style.id = 'preemptive-block-style';
+            style.textContent = `
+                video, #movie_player {
+                    display: none !important;
+                }
+            `;
+            document.head.appendChild(style);
         }
+
+        // Start the audio/video blocking interval
+        startAudioVideoBlockingInterval();
     }
 
     // Function to unblock content
     function unblockContent() {
+        // Update blocking state
         isCurrentlyBlocked = false;
 
         // Remove the preemptive blocking style
         const blockStyle = document.getElementById('preemptive-block-style');
         if (blockStyle) {
             blockStyle.remove();
+        }
+
+        // Clear blocking interval if it exists
+        if (window._blockingInterval) {
+            clearInterval(window._blockingInterval);
+            window._blockingInterval = null;
         }
 
         // If no blocked words in the title, restore the player if it was blocked
@@ -301,58 +271,22 @@
             // Restore audio settings
             restoreAudioSettings();
         }
-
-        // Clear blocking interval if it exists
-        if (window._blockingInterval) {
-            clearInterval(window._blockingInterval);
-            delete window._blockingInterval;
-        }
     }
 
     // Function to restore original audio settings
     function restoreAudioSettings() {
-        // Restore HTML5 video elements
+        // Restore HTML5 video element settings
         const videoElements = document.querySelectorAll('video');
-        videoElements.forEach(videoElement => {
-            if (videoElement) {
-                if (originalVolumes.has(videoElement)) {
-                    videoElement.volume = originalVolumes.get(videoElement);
-                    originalVolumes.delete(videoElement);
-                }
-
-                if (originalMutedStates.has(videoElement)) {
-                    videoElement.muted = originalMutedStates.get(videoElement);
-                    originalMutedStates.delete(videoElement);
-                }
+        videoElements.forEach(video => {
+            if (video) {
+                video.muted = false;
             }
         });
 
-        // Restore YouTube player if available
+        // Restore YouTube player API settings if available
         const player = document.querySelector('#movie_player');
-        if (player && typeof player.isMuted === 'function' && typeof player.setVolume === 'function') {
-            if (player.dataset.originalVolume) {
-                player.setVolume(parseInt(player.dataset.originalVolume));
-                delete player.dataset.originalVolume;
-            }
-
-            if (player.dataset.originalMutedState === 'false' && typeof player.unMute === 'function') {
-                player.unMute();
-            }
-            delete player.dataset.originalMutedState;
-
-            // Re-enable autoplay for this player
-            if (typeof player.playVideo === 'function') {
-                const autoplayEnabled = document.querySelector('.ytp-autonav-toggle-button[aria-checked="true"]');
-                if (autoplayEnabled) {
-                    // Let YouTube's autoplay system work naturally
-                    setTimeout(() => {
-                        // Only attempt to play if we're still on a non-blocked video page
-                        if (!isCurrentlyBlocked && window.location.pathname.includes('/watch')) {
-                            player.playVideo();
-                        }
-                    }, 500);
-                }
-            }
+        if (player && typeof player.unMute === 'function') {
+            player.unMute();
         }
     }
 
@@ -364,55 +298,27 @@
 
     // Function to stop video and audio playback
     function stopVideoAndAudio() {
-        // Method 1: Find and pause the HTML5 video element
+        // Method 1: Find and pause HTML5 video elements
         const videoElements = document.querySelectorAll('video');
-        videoElements.forEach(videoElement => {
-            if (videoElement) {
-                // Store original values if not already stored
-                if (!originalVolumes.has(videoElement)) {
-                    originalVolumes.set(videoElement, videoElement.volume);
-                }
-                if (!originalMutedStates.has(videoElement)) {
-                    originalMutedStates.set(videoElement, videoElement.muted);
-                }
-
-                videoElement.pause();
-                videoElement.muted = true;
-                videoElement.volume = 0;
-
-                // Disconnect source if possible (more aggressive approach)
-                try {
-                    if (videoElement.srcObject) {
-                        const tracks = videoElement.srcObject.getTracks();
-                        tracks.forEach(track => track.stop());
-                        videoElement.srcObject = null;
-                    }
-                } catch (e) {
-                    console.log("Could not disconnect source object:", e);
-                }
+        videoElements.forEach(video => {
+            if (video) {
+                video.pause();
+                video.muted = true;
             }
         });
 
         // Method 2: Use YouTube's player API if available
-        if (typeof document.querySelector('#movie_player') !== 'undefined') {
-            const player = document.querySelector('#movie_player');
-            if (player && typeof player.pauseVideo === 'function' && typeof player.isMuted === 'function') {
-                // Store original muted state if not already stored
-                if (!player.dataset.originalMutedState) {
-                    player.dataset.originalMutedState = player.isMuted();
-                }
-                // Store original volume if not already stored
-                if (!player.dataset.originalVolume) {
-                    player.dataset.originalVolume = player.getVolume();
-                }
-
+        const player = document.querySelector('#movie_player');
+        if (player) {
+            if (typeof player.pauseVideo === 'function') {
                 player.pauseVideo();
+            }
+            if (typeof player.mute === 'function') {
                 player.mute();
-                player.setVolume(0);
             }
         }
 
-        // Continue blocking audio/video
+        // Start blocking interval to keep stopping playback attempts
         startAudioVideoBlockingInterval();
     }
 
@@ -462,7 +368,16 @@
                     clearInterval(window._titleCheckInterval);
                 }
 
-                // If moving to a video page, preemptively block
+                // Clear blocking interval
+                if (window._blockingInterval) {
+                    clearInterval(window._blockingInterval);
+                    window._blockingInterval = null;
+                }
+
+                // Set blocked state to false for the new page
+                isCurrentlyBlocked = false;
+
+                // If moving to a video page, check for blocked content
                 if (window.location.pathname.includes('/watch')) {
                     // Preemptively block content
                     preemptivelyBlock();
@@ -487,7 +402,16 @@
             // Check for shorts first and redirect if needed
             checkAndRedirectShorts();
 
-            // If moving to a video page, preemptively block
+            // Clear blocking interval
+            if (window._blockingInterval) {
+                clearInterval(window._blockingInterval);
+                window._blockingInterval = null;
+            }
+
+            // Set blocked state to false for the new page
+            isCurrentlyBlocked = false;
+
+            // If moving to a video page, check for blocked content
             if (window.location.pathname.includes('/watch')) {
                 preemptivelyBlock();
                 watchForTitle();
@@ -501,7 +425,16 @@
             // Check for shorts first and redirect if needed
             checkAndRedirectShorts();
 
-            // If moving to a video page, preemptively block
+            // Clear blocking interval
+            if (window._blockingInterval) {
+                clearInterval(window._blockingInterval);
+                window._blockingInterval = null;
+            }
+
+            // Set blocked state to false for the new page
+            isCurrentlyBlocked = false;
+
+            // If moving to a video page, check for blocked content
             if (window.location.pathname.includes('/watch')) {
                 preemptivelyBlock();
                 watchForTitle();
@@ -513,7 +446,6 @@
 
     // Start immediately
     initialize();
-
 // Youtube Premium
     // fix "TrustedError" on chrome[-ium], code snippet from zerodytrash/Simple-YouTube-Age-Restriction-Bypass@d2cbcc0
     if (window.trustedTypes && trustedTypes.createPolicy) {
