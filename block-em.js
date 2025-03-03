@@ -2,7 +2,7 @@
 // @name         Remove ADS Elements
 // @version      0.2
 // @description  Removes specific elements from the page
-// @author       tranbinh02, origin: sharmanhall
+// @author       baopingsheng, origin: sharmanhall
 // @supportURL   *
 // @namespace    *
 // @license      MIT
