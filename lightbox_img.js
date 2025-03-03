@@ -3,7 +3,7 @@
 // @namespace    Lightbox Image
 // @version      1.0
 // @description  Inject Lightbox easy into the page
-// @author       TRANBINH02
+// @author       baopingsheng
 // @match        *://*/*
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
 // @grant        GM_addStyle
