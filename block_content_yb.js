@@ -1,14 +1,13 @@
 // ==UserScript==
 // @name         YouTube Content Blocker
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.4
 // @description  Blocks YouTube videos containing specific words in the title
-// @author       baopingsheng
+// @author       You
 // @match        https://www.youtube.com/*
 // @grant        none
 // @run-at       document-start
 // ==/UserScript==
-
 (function() {
     'use strict';
 
@@ -31,13 +30,25 @@
     }
 
     // List of blocked words (all lowercase for case-insensitive matching)
-    const BLOCKED_WORDS = ['kinh dị', 'ma', 'quỷ'];
+    const BLOCKED_WORDS = ['bolero', 'trữ tình', 'vinahouse', 'nhạc vàng', 'bất hủ', 'sến', 'sông nước', 'đồng quê', 'quê hương', 'dân ca', 'miền tây','bài ca','đốt pháo',];
 
     // Track if we're currently in a blocked state
     let isCurrentlyBlocked = false;
 
+    // Function to check for shorts in URL and redirect
+    function checkAndRedirectShorts() {
+        const currentUrl = window.location.href.toLowerCase();
+        if (currentUrl.includes('/shorts') || currentUrl.includes('/short')) {
+            // Redirect to homepage
+            window.location.href = 'https://www.youtube.com/';
+        }
+    }
+
     // Execute as early as possible and continue checking
     function initialize() {
+        // Check for shorts URL immediately
+        checkAndRedirectShorts();
+
         // Immediately check URL for potential blocked content
         if (window.location.pathname.includes('/watch')) {
             const videoId = new URLSearchParams(window.location.search).get('v');
@@ -346,6 +357,9 @@ function blockContent() {
             if (url !== lastUrl) {
                 lastUrl = url;
 
+                // Check for shorts first and redirect if needed
+                checkAndRedirectShorts();
+
                 // Clear previous checks
                 if (window._titleCheckInterval) {
                     clearInterval(window._titleCheckInterval);
@@ -373,6 +387,9 @@ function blockContent() {
         history.pushState = function() {
             originalPushState.apply(this, arguments);
 
+            // Check for shorts first and redirect if needed
+            checkAndRedirectShorts();
+
             // If moving to a video page, preemptively block
             if (window.location.pathname.includes('/watch')) {
                 preemptivelyBlock();
@@ -384,6 +401,9 @@ function blockContent() {
 
         // Handle back/forward navigation
         window.addEventListener('popstate', () => {
+            // Check for shorts first and redirect if needed
+            checkAndRedirectShorts();
+
             // If moving to a video page, preemptively block
             if (window.location.pathname.includes('/watch')) {
                 preemptivelyBlock();
@@ -397,4 +417,3 @@ function blockContent() {
     // Start immediately
     initialize();
 })();
-
