@@ -136,7 +136,7 @@
                 player.mute();
                 player.setVolume(0);
             }
-        }, 0); // Check very frequently during page load
+        }, 100); // Check very frequently during page load
     }
 
     // Wait for title element to become available
