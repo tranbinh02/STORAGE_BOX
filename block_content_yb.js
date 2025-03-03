@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name         YouTube Content Blocker
 // @namespace    http://tampermonkey.net/
-// @version      1.4
+// @version      1.0
 // @description  Blocks YouTube videos containing specific words in the title
-// @author       You
+// @author       baopingsheng
 // @match        https://www.youtube.com/*
 // @grant        none
 // @run-at       document-start
 // ==/UserScript==
+
 (function() {
     'use strict';
 
@@ -30,7 +31,7 @@
     }
 
     // List of blocked words (all lowercase for case-insensitive matching)
-    const BLOCKED_WORDS = ['ma', 'quỷ', 'kinh dị', 'hồn ma', 'ám ảnh', 'yêu quái', 'quái vật', 'ma quái', 'ma thuật', 'siêu nhiên', 'bóng tối', 'lời nguyền', 'ác quỷ', 'tử thần', 'địa ngục', 'huyền bí', 'rùng rợn', 'thây ma', 'xác sống', 'ma cà rồng', 'người sói', 'hắc ám', 'nghi lễ', 'bùa chú', 'oan hồn', 'hoang đường', 'huyễn hoặc'],
+    const BLOCKED_WORDS = ['ma', 'quỷ', 'kinh dị', 'ám ảnh', 'yêu quái', 'quái vật', 'siêu nhiên', 'bóng tối', 'lời thuật', 'ác quỷ', 'tử thần', 'địa vô', 'huyền bí', 'rùng', 'thây ma', 'xác sống', 'hắc trầm', 'nghi lễ', 'bùa chú', 'oan linh hồn', 'hoang đường', 'huyễn hoặc'];
 
     // Track if we're currently in a blocked state
     let isCurrentlyBlocked = false;
@@ -145,7 +146,7 @@
         }
 
         window._titleCheckInterval = setInterval(() => {
-            const titleElement = document.querySelector('h1.ytd-watch-metadata');
+            const titleElement = document.querySelector('h1.ytd-watch-metadata,.ytd-channel-name yt-formatted-string a');
             if (titleElement && titleElement.textContent.trim()) {
                 clearInterval(window._titleCheckInterval);
                 checkAndBlockContent();
@@ -165,7 +166,7 @@
     // Main function to check and block content
     function checkAndBlockContent() {
         // Get the video title element
-        const titleElement = document.querySelector('h1.ytd-watch-metadata');
+        const titleElement = document.querySelector('h1.ytd-watch-metadata,.ytd-channel-name yt-formatted-string a');
 
         // If we're on a video page and title exists
         if (window.location.pathname.includes('/watch') && titleElement && titleElement.textContent.trim()) {
