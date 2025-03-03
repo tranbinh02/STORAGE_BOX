@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      1.3
 // @description  Extracts images and their links from elements with class "images" and allows downloading
-// @author       You
+// @author       baopingsheng
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==
