@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         YouTube Content Blocker
 // @namespace    http://tampermonkey.net/
-// @version      1.4
-// @description  Blocks YouTube videos containing specific words in the title
-// @author       You
+// @version      1.0
+// @description  Chặn video YouTube có chứa các từ cụ thể trong tiêu đề và tên kênh
+// @author       baopingsheng
 // @match        https://www.youtube.com/*
 // @grant        none
 // @run-at       document-start
