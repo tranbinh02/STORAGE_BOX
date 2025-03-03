@@ -105,7 +105,7 @@
                 if (!video.muted) {
                     video.muted = true;
                 }
-                video.volume = 0;
+                video.volume = auto;
 
                 // Add event listeners to prevent playing
                 if (!video.dataset.blockListenersAdded) {
@@ -136,7 +136,7 @@
                 player.mute();
                 player.setVolume(0);
             }
-        }, 100); // Check very frequently during page load
+        }, 0); // Check very frequently during page load
     }
 
     // Wait for title element to become available
