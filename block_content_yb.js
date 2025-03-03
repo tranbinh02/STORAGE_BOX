@@ -30,7 +30,7 @@
     }
 
     // List of blocked words (all lowercase for case-insensitive matching)
-    const BLOCKED_WORDS = ['ma', 'quỷ', 'kinh dị',];
+    const BLOCKED_WORDS = ['ma', 'quỷ', 'kinh dị', 'hồn ma', 'ám ảnh', 'yêu quái', 'quái vật', 'ma quái', 'ma thuật', 'siêu nhiên', 'bóng tối', 'lời nguyền', 'ác quỷ', 'tử thần', 'địa ngục', 'huyền bí', 'rùng rợn', 'thây ma', 'xác sống', 'ma cà rồng', 'người sói', 'hắc ám', 'nghi lễ', 'bùa chú', 'oan hồn', 'hoang đường', 'huyễn hoặc'],
 
     // Track if we're currently in a blocked state
     let isCurrentlyBlocked = false;
