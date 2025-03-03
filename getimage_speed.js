@@ -2,7 +2,7 @@
 // @name         Get image speed
 // @version      0.2
 // @description  Get image speed
-// @author       tranbinh
+// @author       baopingsheng
 // @supportURL   *
 // @namespace    *
 // @license      MIT
