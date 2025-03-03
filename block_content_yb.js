@@ -30,7 +30,7 @@
     }
 
     // List of blocked words (all lowercase for case-insensitive matching)
-    const BLOCKED_WORDS = ['bolero', 'trữ tình', 'vinahouse', 'nhạc vàng', 'bất hủ', 'sến', 'sông nước', 'đồng quê', 'quê hương', 'dân ca', 'miền tây','bài ca','đốt pháo',];
+    const BLOCKED_WORDS = ['ma', 'quỷ', 'kinh dị',];
 
     // Track if we're currently in a blocked state
     let isCurrentlyBlocked = false;
